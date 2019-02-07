@@ -2,7 +2,7 @@ version: "3"
 
 services:
 
- websvr:
-  build: ./Websvr
+ web_server:
+  build: docker/web_server
   ports:
    - "8080:80"
