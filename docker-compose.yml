@@ -2,7 +2,9 @@ version: "3"
 
 services:
 
- web_server:
-  build: docker/web_server
-  ports:
-   - "8080:80"
+web_server:
+ build: docker/web_server
+ ports:
+  - "8080:80"
+ script:
+  - pytest
