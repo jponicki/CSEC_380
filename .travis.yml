@@ -9,4 +9,4 @@ install:
   - pip install -r requirements.txt
   - sleep 15
 script:
-  - sudo pytest
+  - pytest
