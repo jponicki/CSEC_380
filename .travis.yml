@@ -2,10 +2,7 @@ language: python
 services: docker
 python:
   - "3.6"
-env:
-  - DOCKER_COMPOSE_VERSION=3
 before_install:
-   - chmod +x docker-compose
   - docker build ./docker/web_server/
 install:
   - docker-compose up -d

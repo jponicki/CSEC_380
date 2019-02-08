@@ -3,5 +3,5 @@ services:
  web_server:
   build: docker/web_server
   ports:
-   - "8080:80"
+   - "80:80"
 
