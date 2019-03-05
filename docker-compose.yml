@@ -4,4 +4,5 @@ services:
   build: docker/web_server
   ports:
    - "80:80"
+ database:
 
