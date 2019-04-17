@@ -23,8 +23,8 @@ recap = form.getvalue('recap')
 URIReCaptcha = 'https://www.google.com/recaptcha/api/siteverify'
 private_recaptcha = '6LftKJ4UAAAAAGRaBmRZZihc88UugrVJ1cAT3fQg'
 params = urllib.urlencode({
-    	'secret': private_recaptcha,
-    	'response': recap
+	'secret': private_recaptcha,
+	'response': recap
 })
 
 data = urllib.urlopen(URIReCaptcha, params).read()
@@ -48,12 +48,11 @@ if success == True:
 			print('\r\n')
 			print('Failed')
 		else:
-	       		expires = (datetime.now() + timedelta(days=1)).isoformat()
+			expires = (datetime.now() + timedelta(days=1)).isoformat()
 			encoded_jwt = jwt.encode({'username': user, 'expireDate': expires}, 'secret', algorithm='HS256')
 			print('\r\n')
 			print('session=' + encoded_jwt + '; path=/;')
 else:
-        print('Recaptcha Failed, Nice Try buckaroo')
+	print('Recaptcha Failed, Nice Try buckaroo')
 	#they weren't a real one
-
 

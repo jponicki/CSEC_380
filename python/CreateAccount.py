@@ -22,8 +22,8 @@ recap = form.getvalue('recap')
 URIReCaptcha = 'https://www.google.com/recaptcha/api/siteverify'
 private_recaptcha = '6LftKJ4UAAAAAGRaBmRZZihc88UugrVJ1cAT3fQg'
 params = urllib.urlencode({
-    	'secret': private_recaptcha,
-    	'response': recap
+	'secret': private_recaptcha,
+	'response': recap
 })
 
 data = urllib.urlopen(URIReCaptcha, params).read()
@@ -31,19 +31,19 @@ result = json.loads(data)
 success = result.get('success', None)
 
 if recap == 'L33THAx0rTest':
-    	success = True
+	success = True
 	#they a real one
 
 if success == True:
-    	cursor.execute('select `User_ID` from `Users` where `User_ID` = "{}"'.format(username))
+	cursor.execute('select `User_ID` from `Users` where `User_ID` = "{}"'.format(username))
 
-    	ret = cursor.fetchall()
+	ret = cursor.fetchall()
 
-    	if len(ret) > 0:
-        	print('Already Exists')
-    	else:
-        	cursor.execute('insert into `Users` (`User_ID`, `Password`, `Username`) values ("{}", "{}", "{}")'.format(username, password, displayName))
-        	conn.commit()
-       	 	print('User Created')
+	if len(ret) > 0:
+		print('Already Exists')
+	else:
+		cursor.execute('insert into `Users` (`User_ID`, `Password`, `Username`) values ("{}", "{}", "{}")'.format(username, password, displayName))
+		conn.commit()
+		print('User Created')
 else:
-        print('Recaptcha Failed')
+	print('Recaptcha Failed')

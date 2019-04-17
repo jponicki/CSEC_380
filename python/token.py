@@ -11,26 +11,26 @@ from hashlib import sha256
 session = None
 
 if 'HTTP_COOKIE' in os.environ:
-   	cookie_string=os.environ.get('HTTP_COOKIE')
-   	c=Cookie.SimpleCookie()
-   	c.load(cookie_string)
+	cookie_string=os.environ.get('HTTP_COOKIE')
+	c=Cookie.SimpleCookie()
+	c.load(cookie_string)
 	#dem cookies
-   	try:
-      		session=c['session'].value
-   	except KeyError:
-      		pass
+	try:
+		session=c['session'].value
+	except KeyError:
+		pass
 
 print('Content-Type: text/html')
 
 if session is None:
-   	print('\r\n')
-   	print('invalid token')
+	print('\r\n')
+	print('invalid token')
 else:
-   	try:
+	try:
 		#sweet sweet crypto
-      		decoded = jwt.decode(session, 'secret', algorithms=['HS256'])
-      		print('\r\n')
-      		print(decoded)
-   	except KeyError:
-      		print('\r\n')
-     	 	print('invalid token')
+		decoded = jwt.decode(session, 'secret', algorithms=['HS256'])
+		print('\r\n')
+		print(decoded)
+	except KeyError:
+		print('\r\n')
+		print('invalid token')
