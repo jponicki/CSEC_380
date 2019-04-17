@@ -1,8 +1,23 @@
-version: "3"
+version: '2'
 services:
- web_server:
-  build: docker/web_server
-  ports:
-   - "80:80"
- database:
-
+  webserver:
+    build: ./webserver/.
+    links:
+     - database
+    ports:
+     - 80:80
+     - 443:443
+    volumes:
+     - ./webserver/container_files:/var/www/html/videos:Z
+  database:
+    build: ./database/.
+    command: --init-file /mysql/setup.sql
+    environment:
+     - MYSQL_USER=user
+     - MYSQL_PASSWORD=password
+     - MYSQL_ROOT_PASSWORD=yeah
+     - MYSQL_DATABASE=webdata
+    ports:
+     - "3360:3360"
+    volumes:
+     - ./database/container_files:/var/lib/mysql:Z
