@@ -29,7 +29,7 @@ if(username == ""){
 }else if(password == ""){
 	alert('Enter a password');
 }else{
-	xhr.open('GET', '/python/signin.py?username='+username+'&password='+password+'&recap='+recap, true);
+	xhr.open('GET', '/python/SignIn.py?username='+username+'&password='+password+'&recap='+recap, true);
 	xhr.send(null);
 }
 };

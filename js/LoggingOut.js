@@ -17,7 +17,7 @@ xhr.onreadystatechange = function () {
 
 
 
-xhr.open('GET', '/python/logout.py', true);
+xhr.open('GET', '/python/LoggingOut.py', true);
 xhr.send(null);
 
 }

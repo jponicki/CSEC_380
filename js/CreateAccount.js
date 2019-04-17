@@ -33,7 +33,7 @@ if(username == ""){
 	alert('You need a password');
 }else{
 	//put in dem creds. Show your legitness
-	xhr.open('GET', '/python/newAccount.py?username='+username+'&displayName='+displayName+'&password='+password+'&recap='+recap, true);
+	xhr.open('GET', '/python/CreateAccount.py?username='+username+'&displayName='+displayName+'&password='+password+'&recap='+recap, true);
 	xhr.send(null);
 }
 };

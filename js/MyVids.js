@@ -18,7 +18,7 @@ try{
    	if(token == null){
         	window.location.replace("/html/LoginPage.html");
    	}else{
-        	xhr.open('GET', '/python/manage.py', true);
+        	xhr.open('GET', '/python/MyVids.py', true);
         	xhr.send(null);
    	};
 }

@@ -15,15 +15,16 @@ xhr.onreadystatechange = function () {
 
 var cookie = document.cookie;
 try{
-   var token = cookie.split('session=')[1].split(';')[0];
-   if(token == null){
-   	window.location.replace("/html/LoginPage.html");
-   }else{
-   	xhr.open('GET', '/python/home.py', true);
-        xhr.send(null);
-   };
+   	var token = cookie.split('session=')[1].split(';')[0];
+   	if(token == null){
+   		window.location.replace("/html/LoginPage.html");
+   	}else{
+   		xhr.open('GET', '/python/HomeSweetHome.py', true);
+        	xhr.send(null);
+   	};
 
 }
 catch(err){
-   window.location.replace("/html/LoginPage.html");
+   	window.location.replace("/html/LoginPage.html");
+	//oof
 }
