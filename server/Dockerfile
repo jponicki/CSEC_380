@@ -34,7 +34,7 @@ RUN echo "                       \n \
    ServerAlias 127.0.0.1         \n \
    DocumentRoot /var/www/html    \n \
    SSLEngine On                  \n \
-   SSLCertificateFile /var/www/ca/sercert.crt \n \
+   SSLCertificateFile /var/www/ca/servcert.crt \n \
    SSLCertificateKeyFile /var/www/ca/servkey.key \n \
 <Directory /var/www/html>        \n \
    Options +ExecCGI -Indexes     \n \
