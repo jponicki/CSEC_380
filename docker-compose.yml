@@ -11,7 +11,7 @@ services:
      - ./webserver/container_files:/var/www/html/videos:Z
   database:
     build: ./database/.
-    command: --init-file /mysql/setup.sql
+    command: --init-file /mysql/webappdb.sql
     environment:
      - MYSQL_USER=user
      - MYSQL_PASSWORD=password
