@@ -1,16 +1,16 @@
 version: '2'
 services:
   webserver:
-    build: ./webserver/.
+    build: ./server/.
     links:
      - database
     ports:
      - 80:80
      - 443:443
     volumes:
-     - ./webserver/container_files:/var/www/html/videos:Z
+     - ./server/container_files:/var/www/html/videos:Z
   database:
-    build: ./database/.
+    build: ./Database/.
     command: --init-file /mysql/webappdb.sql
     environment:
      - MYSQL_USER=user
