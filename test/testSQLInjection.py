@@ -1,5 +1,6 @@
 import requests
 
+#this one is my heroine shootin vein
 def test_1_sql_injection():
 	params = {'username':'new', 'password':'new', 'recap':'L33THAx0rTest'}
 	page = requests.get('https://localhost/python/SignIn.py', params=params, verify=False)
@@ -11,7 +12,7 @@ def test_1_sql_injection():
 	page = requests.get('https://localhost/python/HelloGod.py', params=params, cookies=cookies, verify=False)
 	assert 'User: New Title: That New Shit' in page.text
 
-
+#this is the vein I use for injecting blindfolded
 def test_2_blind_sql_injection():
 	params = {'username':'new', 'password':'new', 'recap':'L33THAx0rTest'}
 	page = requests.get('https://localhost/python/SignIn.py', params=params, verify=False)

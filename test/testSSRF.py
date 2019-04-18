@@ -1,5 +1,6 @@
 import requests
 
+#server side request forgery
 def test_1_ssrf():
 	params = {'username':'new', 'password':'new', 'recap':'L33THAx0rTest'}
 	page = requests.get('https://localhost/python/SignIn.py', params=params, verify=False)

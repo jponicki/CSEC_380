@@ -1,6 +1,7 @@
     
 import requests
 
+#test that bitch
 def test_1_upload_link():
 	params = {'username':'new', 'password':'new', 'recap':'L33THAx0rTest'}
 	page = requests.get('https://localhost/python/SignIn.py', params=params, verify=False)
@@ -12,6 +13,7 @@ def test_1_upload_link():
 	page = requests.get('https://localhost/python/UpVid.py', params=params, cookies=cookies, verify=False)
 	assert 'File downloaded, my son' in page.text
 
+#test it real good
 def test_2_delete():
 	params = {'username':'new', 'password':'new', 'recap':'L33THAx0rTest'}
 	page = requests.get('https://localhost/python/SignIn.py', params=params, verify=False)
@@ -23,7 +25,7 @@ def test_2_delete():
 	page = requests.get('https://localhost/python/buhbye.py', params=params, cookies=cookies, verify=False)
 	assert '/html/MyVids.html' in page.text
 
-
+#JUST SENT IT
 def test_3_delete_novideo():
 	params = {'username':'new', 'password':'new', 'recap':'L33THAx0rTest'}
 	page = requests.get('https://localhost/python/SignIn.py', params=params, verify=False)
